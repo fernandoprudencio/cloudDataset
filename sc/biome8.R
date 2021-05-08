@@ -25,6 +25,7 @@ library(magrittr)
 # dir.create("biome8_fixedmask")
 # dir.create("biome8_fixedmask/mtl")
 list.img <- list.files(
+  "data/biome8_fixedmask",
   all.files = T,
   pattern = ".img",
   recursive = T,
@@ -87,4 +88,7 @@ names(df) <-
   )
 
 # Save table ----
-saveRDS(df, file = "biome8.rds")
+saveRDS(
+  mutate_all(df, ~replace(., is.na(.), 0)),
+  file = "biome8.rds"
+)
