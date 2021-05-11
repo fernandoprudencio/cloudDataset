@@ -15,6 +15,8 @@ tar_gz_irish <-
 dir.create("data/irish", showWarnings = FALSE)
 
 # seq_along(tar_gz_irish)
-for (index in 2:206) {
+for (index in 111:206) {
+  # index = 112
+  cat(sprintf("scene = %1s\n", index))
   download.file(tar_gz_irish[index], paste0("data/irish/", basename(tar_gz_irish))[index])
 }
