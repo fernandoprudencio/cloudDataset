@@ -37,12 +37,15 @@ list.img <- list.files(
   recursive = T,
   full.names = T
 )
+
 # names
 name <-
   list.files(
-  "data/irish",
-  pattern = "_B1",
-  recursive = T
+    "/home/fernando/Documentos/cloudsen12_figures/figures/table1/dataset/Irish/metadata",
+  # pattern = "_B1",
+  pattern = "_MTL",
+  recursive = T,
+  full.names = T
 ) %>%
   basename() %>%
   str_sub(1, -5)

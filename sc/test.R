@@ -11,7 +11,7 @@ cloudHollstein <- readRDS("data/rds/s2_hollstein.rds")
 cloudSparcs <- readRDS("data/rds/sparcs.rds")
 cloudIrish <- readRDS("data/rds/irish.rds")
 
-df <- cloudIrish
+df <- cloudBiome8
 mutate_all(df, ~replace(., is.na(.), 0)) %>%
   dplyr::select(-id) %>%
   apply(MARGIN = 2, FUN = function(x) sum(x, na.rm = T))
